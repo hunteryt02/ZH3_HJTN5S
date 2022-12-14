@@ -21,5 +21,13 @@ namespace ZH3_HJTN5S
                     select x;
             suppliersBindingSource.DataSource = s.ToList();
         }
+
+        private void textBoxCompanyName_TextChanged(object sender, EventArgs e)
+        {
+            var s = from x in context.Suppliers
+                    where x.CompanyName.Contains(textBoxCompanyName.Text)
+                    select x;
+            suppliersBindingSource.DataSource = s.ToList();
+        }
     }
 }

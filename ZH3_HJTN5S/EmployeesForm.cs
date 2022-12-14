@@ -21,5 +21,13 @@ namespace ZH3_HJTN5S
                     select x;
             employeesBindingSource.DataSource = e.ToList();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var em = from x in context.Employees
+                     where x.FirstName.Contains(textBoxFirstName.Text)
+                    select x;
+            employeesBindingSource.DataSource = em.ToList();
+        }
     }
 }

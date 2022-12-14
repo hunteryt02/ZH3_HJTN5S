@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,8 @@
             this.ordersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsToNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -87,16 +88,12 @@
             this.reportsToNavigationDataGridViewTextBoxColumn,
             this.territoryDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.employeesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 71);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 367);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // employeesBindingSource
-            // 
-            this.employeesBindingSource.DataSource = typeof(ZH3_HJTN5S.Models.Employees);
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
@@ -252,17 +249,31 @@
             this.territoryDataGridViewTextBoxColumn.Name = "territoryDataGridViewTextBoxColumn";
             this.territoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataSource = typeof(ZH3_HJTN5S.Models.Employees);
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Location = new System.Drawing.Point(289, 22);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(231, 23);
+            this.textBoxFirstName.TabIndex = 1;
+            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // EmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.dataGridView1);
             this.Name = "EmployeesForm";
             this.Text = "EmployeesForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -292,5 +303,6 @@
         private DataGridViewTextBoxColumn reportsToNavigationDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn territoryDataGridViewTextBoxColumn;
         private BindingSource employeesBindingSource;
+        private TextBox textBoxFirstName;
     }
 }

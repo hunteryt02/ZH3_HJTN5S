@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,8 @@
             this.faxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.homePageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxCompanyName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,16 +70,12 @@
             this.homePageDataGridViewTextBoxColumn,
             this.productsDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.suppliersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 87);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 351);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // suppliersBindingSource
-            // 
-            this.suppliersBindingSource.DataSource = typeof(ZH3_HJTN5S.Models.Suppliers);
             // 
             // supplierIdDataGridViewTextBoxColumn
             // 
@@ -171,17 +168,31 @@
             this.productsDataGridViewTextBoxColumn.Name = "productsDataGridViewTextBoxColumn";
             this.productsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // suppliersBindingSource
+            // 
+            this.suppliersBindingSource.DataSource = typeof(ZH3_HJTN5S.Models.Suppliers);
+            // 
+            // textBoxCompanyName
+            // 
+            this.textBoxCompanyName.Location = new System.Drawing.Point(329, 35);
+            this.textBoxCompanyName.Name = "textBoxCompanyName";
+            this.textBoxCompanyName.Size = new System.Drawing.Size(162, 23);
+            this.textBoxCompanyName.TabIndex = 1;
+            this.textBoxCompanyName.TextChanged += new System.EventHandler(this.textBoxCompanyName_TextChanged);
+            // 
             // SupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxCompanyName);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SupplierForm";
             this.Text = "SupplierForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -202,5 +213,6 @@
         private DataGridViewTextBoxColumn homePageDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn productsDataGridViewTextBoxColumn;
         private BindingSource suppliersBindingSource;
+        private TextBox textBoxCompanyName;
     }
 }
